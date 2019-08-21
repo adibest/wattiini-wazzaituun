@@ -5,16 +5,16 @@ import {
   View,
   FlatList,
   StyleSheet,
+  TouchableOpacity
 } from 'react-native';
 import {
   Container, Header, Title, Content, Footer, FooterTab, Left, Right,
-  Body,
+  Body, List, ListItem,
   Button,
   Icon,
   Text,
   DeckSwiper, Card, CardItem, Thumbnail
 } from 'native-base';
-import {Card} from 'react-native-elements';
 
 import listDoa from './datas/Doa.json';
 import Sidebar from './Sidebar';
@@ -35,18 +35,22 @@ export default class DoaUmum extends Component {
           <Right />
         </Header>
         <Content>
-          <FlatList
-            horizontal
-            data={listDoa}
-            keyExtractor={ (listDoa,index) => index.toString() }
-            renderItem= { (doa) => (
-              <View>
-                <Text>{doa.item.title}</Text>
-                <Text>{doa.item.arabic}</Text>
-                <Text>{doa.item.translate}</Text>
-              </View>
-            ) }
-          />
+          <List>
+            <FlatList
+              data={listDoa}
+              keyExtractor={(listDoa, index) => index.toString()}
+              renderItem={ (doa) => (
+                  <ListItem>
+                    <TouchableOpacity
+                      onPress={ () => this.props.navigation.navigate('Home') }
+                    >
+                      <Text>{doa.item.title}</Text>
+                    </TouchableOpacity>
+                  </ListItem>
+                )
+              }
+            />
+          </List>
         </Content>
       </Container>
     );
