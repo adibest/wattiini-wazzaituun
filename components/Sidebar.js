@@ -5,21 +5,23 @@ import {
   View,
   Text,
   StyleSheet,
+  TouchableOpacity
 } from 'react-native';
 import {Button} from 'native-base';
+import { SwitchActions } from 'react-navigation';
 
 export default class Sidebar extends Component {
   render() {
     return (
       <View style={styles.container}>
         <Text>I'm the Sidebar component</Text>
-        <Button
+        <TouchableOpacity
           style={styles.button}
-          onPress={ () => this.props.navigation.navigate('About') }
+          onPress={ () => this.props.navigation.navigate( 'About' ) }
           block light
         >
           <Text> About </Text>
-        </Button>
+        </TouchableOpacity>
       </View>
     );
   }

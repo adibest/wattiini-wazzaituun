@@ -2,7 +2,22 @@
 
 import React, { Component } from 'react';
 import {View, FlatList, StyleSheet} from 'react-native';
-import {Container, Header, Title, Content, Footer, FooterTab, Left, Right, Body, Icon, Button, Text, Drawer} from 'native-base';
+import {
+  Container,
+  Header,
+  Title,
+  Content,
+  Footer,
+  FooterTab,
+  Left,
+  Right,
+  Body,
+  Button,
+  Icon,
+  Text,
+  Drawer,
+  Accordion
+} from 'native-base';
 
 import listDoa from './components/datas/Doa.json';
 import Sidebar from './components/Sidebar';
@@ -36,26 +51,14 @@ export default class Home extends Component {
             </Body>
             <Right />
           </Header>
-          <Body>
-            <FlatList
-              data={listDoa}
-              keyExtractor={ (listDoa,index) => index.toString() }
-              renderItem= { (doa) => (
-                <View>
-                  <Text>{doa.item.title}</Text>
-                  <Text>{doa.item.arabic}</Text>
-                  <Text>{doa.item.translate}</Text>
-                </View>
-              ) }
-            />
-            <Button
-              style={styles.button}
-              onPress={ () => this.props.navigation.navigate('Sidebar') }
-              block light
-            >
-              <Text> Sidebar </Text>
+          <Content>
+            <Button onPress={ () => this.props.navigation.navigate('DoaUmum') }>
+              <Text>Doa Umum</Text>
             </Button>
-          </Body>
+            <Button>
+              <Text>Doa Para Nabi</Text>
+            </Button>
+          </Content>
         </Container>
       </Drawer>
     );

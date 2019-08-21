@@ -4,17 +4,25 @@ import {createStackNavigator, createAppContainer} from 'react-navigation';
 import HomeScreen from './Home';
 import AboutScreen from './components/About';
 import SidebarScreen from './components/Sidebar';
+import DoaUmumScreen from './components/DoaUmum';
+import DoaNabiScreen from './components/DoaNabi';
 
 const screen = createStackNavigator({
   Home: {
     screen: HomeScreen
   },
+  Sidebar: {
+    screen: SidebarScreen
+  },
   About: {
     screen: AboutScreen
   },
-  Sidebar: {
-    screen: SidebarScreen
-  }
+  DoaUmum: {
+    screen: DoaUmumScreen
+  },
+  DoaNabi: {
+    screen: DoaNabiScreen
+  },
 }, {
   defaultNavigationOptions: {
     header: null,
