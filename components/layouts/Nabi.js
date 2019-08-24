@@ -49,6 +49,7 @@ export default class Nabi extends Component {
                 <Text>{doa.item.title}</Text>
                 <Text>{doa.item.arabic}</Text>
                 <Text>{doa.item.translate}</Text>
+                <Text>{doa.item.source}</Text>
               </View>
             </Content>
           </Container>

@@ -12,6 +12,7 @@
   "dependencies": {
     "@trendmicro/react-sidenav": "^0.4.5",
     "native-base": "^2.13.5",
+    "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-native": "0.60.5",
     "react-native-elements": "^1.1.0",
