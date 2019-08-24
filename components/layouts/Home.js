@@ -7,11 +7,11 @@ import {
   StyleSheet,
 } from 'react-native';
 
-export default class About extends Component {
+export default class Home extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>I'm the About component</Text>
+        <Text>I'm the Home component</Text>
       </View>
     );
   }
