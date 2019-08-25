@@ -6,36 +6,43 @@ import {
   Text,
   StyleSheet,
 } from 'react-native';
+import { SwitchActions } from 'react-navigation';
 import {
-  Button, Icon
+  Container,
+  Header,
+  Left,
+  Body,
+  Right,
+  Content,
+  Button,
+  Title
 } from 'native-base';
-import {NavigationActions} from 'react-navigation';
-import PropTypes from 'prop-types';
+import Icon from 'react-native-vector-icons/AntDesign';
 
-class SideBar extends Component {
-
-  navigateToScreen = (route) => () => {
-    const navigate = NavigationActions.navigate({
-      routeName: route
-    });
-    this.props.navigation.dispatch(navigate);
-  }
-
+export default class SideBar extends Component {
   render() {
     return (
-      <View>
-        <Text>I'm the SideBar component</Text>
-        <Button onPress={() => this.navigateToScreen('Home')}>
-          <Icon name='book' />
-          <Text>About</Text>
-        </Button>
-      </View>
+      <Container>
+        <Header>
+          <Left>
+            <Icon name='rightcircleo' size={24} color='#fff' style={{marginLeft: 5}} />
+          </Left>
+          <Body>
+            <Title>Doa Umum</Title>
+          </Body>
+          <Right />
+        </Header>
+        <Content>
+
+        </Content>
+      </Container>
     );
   }
 }
 
-SideBar.propTypes = {
-  navigation: PropTypes.object
-};
-
-export default SideBar;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#ff4d4d',
+  },
+});

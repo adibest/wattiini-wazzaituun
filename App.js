@@ -28,9 +28,14 @@ const Stack = createStackNavigator({
 });
 
 const Drawer = createDrawerNavigator({
+  Home: {
+    screen: HomeScreen
+  },
   About: {
     screen: AboutScreen
   },
+}, {
+  initialRouteName: 'Home',
 });
 
 const Fusion = createSwitchNavigator({

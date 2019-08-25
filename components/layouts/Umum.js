@@ -18,7 +18,9 @@ import {
   Content,
   Icon,
   Button,
-  Title
+  Title,
+  Card,
+  CardItem
 } from 'native-base';
 import Doa from '../datas/Doa.json';
 
@@ -45,11 +47,21 @@ export default class Umum extends Component {
               <Right />
             </Header>
             <Content>
-              <View style = { styles.njobo }>
-                <Text>{doa.item.title}</Text>
-                <Text>{doa.item.arabic}</Text>
-                <Text>{doa.item.translate}</Text>
-                <Text>{doa.item.source}</Text>
+              <View style={styles.njobo}>
+                <Card>
+                  <CardItem header>
+                    <Text style={styles.title}>{doa.item.title}</Text>
+                  </CardItem>
+                  <CardItem>
+                    <Body>
+                      <Text style={styles.arabic}>{doa.item.arabic}</Text>
+                      <Text style={styles.translate}>{doa.item.translate}</Text>
+                    </Body>
+                  </CardItem>
+                  <CardItem footer>
+                    <Text style={styles.source}>{doa.item.source}</Text>
+                  </CardItem>
+                </Card>
               </View>
             </Content>
           </Container>
@@ -64,10 +76,25 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   njobo: {
-    backgroundColor: '#32ff7e',
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
     width: Dimensions.get('window').width,
   },
+  title: {
+    fontSize: 22,
+    fontWeight: '500',
+    marginBottom: 10,
+  },
+  arabic: {
+    fontSize: 24,
+    marginBottom: 10,
+  },
+  translate: {
+    fontSize: 18,
+    marginBottom: 10,
+  },
+  source: {
+    fontSize: 14,
+  }
 });
