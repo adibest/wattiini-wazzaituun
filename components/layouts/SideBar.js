@@ -15,7 +15,9 @@ import {
   Right,
   Content,
   Button,
-  Title
+  Title,
+  List,
+  ListItem
 } from 'native-base';
 import Icon from 'react-native-vector-icons/AntDesign';
 
@@ -23,17 +25,30 @@ export default class SideBar extends Component {
   render() {
     return (
       <Container>
-        <Header>
+        <Header style={styles.header}>
           <Left>
-            <Icon name='rightcircleo' size={24} color='#fff' style={{marginLeft: 5}} />
+            <Icon name='rightcircleo' size={24} color='#fff' style={{padding: 5}} />
           </Left>
           <Body>
-            <Title>Doa Umum</Title>
+            <Title style={styles.tt}>About App</Title>
           </Body>
           <Right />
         </Header>
         <Content>
-
+          <List>
+            <ListItem itemHeader>
+              <Text style={[styles.lh,styles.tt]}>Doa Dalam Qur'an</Text>
+            </ListItem>
+            <ListItem>
+              <Text style={[styles.lph,styles.tt]}>Sebuah aplikasi sederhana yang berisi doa-doa yang bersumber dari Al Qur'an yang mulia.</Text>
+            </ListItem>
+            <ListItem>
+              <Text style={[styles.lph,styles.tt]}>Versi 0.0.1</Text>
+            </ListItem>
+            <ListItem>
+              <Text style={[styles.lph,styles.tt]}>&copy; 1422H</Text>
+            </ListItem>
+          </List>
         </Content>
       </Container>
     );
@@ -45,4 +60,18 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#ff4d4d',
   },
+  header: {
+    backgroundColor: '#0fb9b1',
+    height: 80,
+  },
+  lh: {
+    fontSize: 18,
+  },
+  lph: {
+    fontSize: 16,
+    textAlign: 'justify',
+  },
+  tt: {
+    fontFamily: 'Livvic-Regular',
+  }
 });
