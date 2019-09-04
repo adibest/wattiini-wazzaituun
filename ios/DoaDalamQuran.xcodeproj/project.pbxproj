@@ -52,6 +52,7 @@
 		FE91C07CB42244A0ADBA69A5 /* Livvic-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D0C22272A2A648489FB1ECB6 /* Livvic-Regular.ttf */; };
 		04A77EBDBDDC4B63A8731261 /* MarkaziText-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DF2677331784A53B3D9E867 /* MarkaziText-Regular.ttf */; };
 		AA1381CF58744AD393FC8DE4 /* me_quran.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6478560A8C364051B80CB560 /* me_quran.ttf */; };
+		5D66CBAFB7A34F76B33E8171 /* Livvic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 476989DBDB144D36AF6F7125 /* Livvic-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +125,7 @@
 		D0C22272A2A648489FB1ECB6 /* Livvic-Regular.ttf */ = {isa = PBXFileReference; name = "Livvic-Regular.ttf"; path = "../assets/fonts/Livvic-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		4DF2677331784A53B3D9E867 /* MarkaziText-Regular.ttf */ = {isa = PBXFileReference; name = "MarkaziText-Regular.ttf"; path = "../assets/fonts/MarkaziText-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		6478560A8C364051B80CB560 /* me_quran.ttf */ = {isa = PBXFileReference; name = "me_quran.ttf"; path = "../assets/fonts/me_quran.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		476989DBDB144D36AF6F7125 /* Livvic-Bold.ttf */ = {isa = PBXFileReference; name = "Livvic-Bold.ttf"; path = "../assets/fonts/Livvic-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -271,6 +273,7 @@
 				D0C22272A2A648489FB1ECB6 /* Livvic-Regular.ttf */,
 				4DF2677331784A53B3D9E867 /* MarkaziText-Regular.ttf */,
 				6478560A8C364051B80CB560 /* me_quran.ttf */,
+				476989DBDB144D36AF6F7125 /* Livvic-Bold.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -449,6 +452,7 @@
 				FE91C07CB42244A0ADBA69A5 /* Livvic-Regular.ttf in Resources */,
 				04A77EBDBDDC4B63A8731261 /* MarkaziText-Regular.ttf in Resources */,
 				AA1381CF58744AD393FC8DE4 /* me_quran.ttf in Resources */,
+				5D66CBAFB7A34F76B33E8171 /* Livvic-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

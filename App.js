@@ -6,7 +6,7 @@ import {
   createAppContainer
 } from 'react-navigation';
 
-import HomeScreen from './components/layouts/Home';
+import HomeScreen from './components/layouts-two/Home';
 import UmumScreen from './components/layouts/Umum';
 import NabiScreen from './components/layouts/Nabi';
 import AboutScreen from './components/layouts/About';

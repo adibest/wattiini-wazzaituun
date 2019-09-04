@@ -5,6 +5,7 @@ import {
   View,
   Text,
   StyleSheet,
+  Linking
 } from 'react-native';
 import { SwitchActions } from 'react-navigation';
 import {
@@ -41,6 +42,9 @@ export default class SideBar extends Component {
             </ListItem>
             <ListItem>
               <Text style={[styles.lph,styles.tt]}>Sebuah aplikasi sederhana yang berisi doa-doa yang bersumber dari Al Qur'an yang mulia.</Text>
+            </ListItem>
+            <ListItem>
+              <Text style={[styles.lph,styles.tt]}>Teks Arab dan Terjemahan disadur dari <Text onPress={ () => Linking.openURL('https://muslim.or.id')} style={{color: '#3c40c6'}}>muslim.or.id</Text> dan <Text onPress={ () => Linking.openURL('https://bincangsyariah.com')} style={{color: '#3c40c6'}}>bincangsyariah.com</Text></Text>
             </ListItem>
             <ListItem>
               <Text style={[styles.lph,styles.tt]}>Versi 0.0.1</Text>

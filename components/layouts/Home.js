@@ -28,16 +28,15 @@ import SideBar from './SideBar';
 import Swipe from './Swipe';
 import Icon from 'react-native-vector-icons/AntDesign';
 
-const cards = [
-  {
-    text: 'Doa Umum',
-  },
-  {
-    text: 'Doa Nabi'
-  }
-];
+import SplashScreen from 'react-native-splash-screen';
 
 export default class Home extends Component {
+
+  componentDidMount() {
+  	// do stuff while splash screen is shown
+      // After having done stuff (such as async tasks) hide the splash screen
+      SplashScreen.hide();
+  };
 
   closeDrawer () {
     this.drawer._root.close()
@@ -56,7 +55,7 @@ export default class Home extends Component {
       >
         <Container>
           <Header style={styles.header}>
-            <Left>
+            <Left style={{flex: 1}}>
               <Button
                 transparent
                 onPress={() => this.openDrawer()}
@@ -64,10 +63,10 @@ export default class Home extends Component {
                 <Icon name='leftcircleo' size={24} color='#fff' style={{padding: 5}} />
               </Button>
             </Left>
-            <Body>
+            <Body style={{flex: 3,width: 300}}>
               <Title style={styles.tt}>Doa Dalam Qur'an</Title>
             </Body>
-            <Right>
+            <Right style={{flex: 1}}>
               <Button
                 transparent
                 onPress={() => this.props.navigation.navigate('About')}
@@ -86,12 +85,12 @@ export default class Home extends Component {
               <Button
                 onPress = { () => this.props.navigation.navigate('Umum') }
               >
-                <Text style={styles.tb}>Doa Umum</Text>
+                <Text style={styles.tb}>Doa-doa Umum</Text>
               </Button>
               <Button
                 onPress = { () => this.props.navigation.navigate('Nabi') }
               >
-                <Text style={styles.tb}>Doa Nabi</Text>
+                <Text style={styles.tb}>Doa Para Nabi</Text>
               </Button>
             </FooterTab>
           </Footer>
@@ -126,6 +125,6 @@ const styles = StyleSheet.create({
   },
   cardus: {
     width: Dimensions.get('window').width,
-    height: 510,
+    height: 500,
   }
 });

@@ -42,7 +42,7 @@ export default class Nabi extends Component {
                 </Button>
               </Left>
               <Body>
-                <Title style={styles.tt}>Doa Nabi</Title>
+                <Title style={styles.tt}>Doa Para Nabi</Title>
               </Body>
               <Right />
             </Header>

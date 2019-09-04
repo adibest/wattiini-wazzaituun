@@ -42,7 +42,7 @@ export default class Umum extends Component {
                 </Button>
               </Left>
               <Body>
-                <Title style={styles.tt}>Doa Umum</Title>
+                <Title style={styles.tt}>Doa-doa Umum</Title>
               </Body>
               <Right />
             </Header>
