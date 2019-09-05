@@ -21,6 +21,9 @@ const Stack = createStackNavigator({
   Nabi: {
     screen: NabiScreen
   },
+  About: {
+    screen: AboutScreen
+  },
 }, {
   defaultNavigationOptions: {
     header: null,
@@ -66,7 +69,7 @@ const NestAll = createStackNavigator({
   },
 });
 
-const AppContainer = createAppContainer(NestAll);
+const AppContainer = createAppContainer(Stack);
 
 export default class App extends Component {
   render(){

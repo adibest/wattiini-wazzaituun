@@ -15,6 +15,7 @@ import {
 import SplashScreen from 'react-native-splash-screen';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import TabUmum from './TabUmum';
+import CustomMenuIcon from './CustomMenuIcon';
 
 export default class Home extends Component {
 
@@ -29,12 +30,25 @@ export default class Home extends Component {
           <Body>
             <Text style={styles.headerTitle}>Doa Dalam Qur'an</Text>
           </Body>
-          <Right>
-            <Button
-              transparent
-            >
-              <Icon name='ellipsis-v' size={18} color='#fff' style={{padding: 5}} />
-            </Button>
+          <Right style={{paddingRight: 10}}>
+            <CustomMenuIcon
+              //Menu Text
+              menutext="Menu"
+              //Menu View Style
+              menustyle={{
+                marginRight: 25,
+                flexDirection: 'row',
+                justifyContent: 'flex-end',
+              }}
+              //Menu Text Style
+              textStyle={{
+                color: 'white',
+              }}
+              //Click functions for the menu items
+              optionAbout={() => {
+                this.props.navigation.navigate('About');
+              }}
+            />
           </Right>
         </Header>
         <Tabs
