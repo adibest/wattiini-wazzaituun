@@ -5,7 +5,9 @@ import {
   View,
   Text,
   StyleSheet,
-  FlatList
+  FlatList,
+  TouchableOpacity,
+  Dimensions
 } from 'react-native';
 import {
   Container, Header, Left, Body, Right, Content,
@@ -14,7 +16,16 @@ import {
 import Doa from '../datas/Doa.json';
 
 export default class TabUmum extends Component {
+
+  constructor(props){
+    super(props);
+
+  }
+
   render() {
+
+    const {navigation} = this.props;
+
     return (
       <Container>
         <Content>
@@ -22,7 +33,10 @@ export default class TabUmum extends Component {
             data={Doa}
             keyExtractor={(doa, index) => index.toString()}
             renderItem={(doa) => (
-              <ListItem>
+              <TouchableOpacity
+                style={styles.touch}
+                onPress={() => this.props.navigation.navigate('DoaUmum',{pageId:doa.item.id})}
+              >
                 <View style={styles.container}>
                   <View styles={styles.flexNumb}>
                     <Text style={[styles.textRegular,styles.numbering]}>{doa.item.id}</Text>
@@ -31,7 +45,7 @@ export default class TabUmum extends Component {
                     <Text style={[styles.textRegular,styles.titleList]}>{doa.item.title}</Text>
                   </View>
                 </View>
-              </ListItem>
+              </TouchableOpacity>
             )}
           />
         </Content>
@@ -41,10 +55,21 @@ export default class TabUmum extends Component {
 }
 
 const styles = StyleSheet.create({
+  touch: {
+    width: Dimensions.get('window').width,
+    paddingTop: 20,
+    paddingHorizontal: 20,
+    paddingBottom: 0,
+  },
   container: {
     flex: 1,
     flexDirection: 'row',
-    alignContent: 'space-around'
+    alignContent: 'space-between',
+    paddingHorizontal: 10,
+    paddingTop: 0,
+    paddingBottom: 20,
+    borderBottomWidth: 0.7,
+    borderBottomColor: '#22223B'
   },
   textRegular: {
     fontFamily: 'Livvic-Regular',
@@ -68,5 +93,5 @@ const styles = StyleSheet.create({
   },
   titleList: {
     fontSize: 14,
-  }
+  },
 });

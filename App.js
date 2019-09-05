@@ -7,6 +7,7 @@ import {
 } from 'react-navigation';
 
 import HomeScreen from './components/layouts-two/Home';
+import DoaUmumScreen from './components/layouts-two/DoaUmum';
 import UmumScreen from './components/layouts/Umum';
 import NabiScreen from './components/layouts/Nabi';
 import AboutScreen from './components/layouts/About';
@@ -15,6 +16,9 @@ const Stack = createStackNavigator({
   Home: {
     screen: HomeScreen
   },
+  DoaUmum: {
+    screen: DoaUmumScreen
+  },
   Umum: {
     screen: UmumScreen
   },
@@ -24,45 +28,6 @@ const Stack = createStackNavigator({
   About: {
     screen: AboutScreen
   },
-}, {
-  defaultNavigationOptions: {
-    header: null,
-  },
-});
-
-const Drawer = createDrawerNavigator({
-  Home: {
-    screen: HomeScreen
-  },
-  About: {
-    screen: AboutScreen
-  },
-}, {
-  initialRouteName: 'Home',
-});
-
-const Fusion = createSwitchNavigator({
-  Main: {
-    screen: Stack
-  },
-  Second: {
-    screen: Drawer
-  },
-});
-
-const NestAll = createStackNavigator({
-  Home: {
-    screen: HomeScreen
-  },
-  Umum: {
-    screen: UmumScreen
-  },
-  Nabi: {
-    screen: NabiScreen
-  },
-  Drawer: {
-    screen: Drawer
-  }
 }, {
   defaultNavigationOptions: {
     header: null,

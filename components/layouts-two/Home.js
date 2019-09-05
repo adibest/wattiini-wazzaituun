@@ -30,13 +30,12 @@ export default class Home extends Component {
           <Body>
             <Text style={styles.headerTitle}>Doa Dalam Qur'an</Text>
           </Body>
-          <Right style={{paddingRight: 10}}>
+          <Right style={{paddingRight: 15}}>
             <CustomMenuIcon
               //Menu Text
               menutext="Menu"
               //Menu View Style
               menustyle={{
-                marginRight: 25,
                 flexDirection: 'row',
                 justifyContent: 'flex-end',
               }}
