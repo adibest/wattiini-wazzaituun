@@ -78,6 +78,20 @@
 		<string>MarkaziText-Regular.ttf</string>
 		<string>me_quran.ttf</string>
 		<string>Livvic-Bold.ttf</string>
+		<string>Livvic-Black.ttf</string>
+		<string>Livvic-BlackItalic.ttf</string>
+		<string>Livvic-BoldItalic.ttf</string>
+		<string>Livvic-ExtraLight.ttf</string>
+		<string>Livvic-ExtraLightItalic.ttf</string>
+		<string>Livvic-Light.ttf</string>
+		<string>Livvic-LightItalic.ttf</string>
+		<string>Livvic-Medium.ttf</string>
+		<string>Livvic-MediumItalic.ttf</string>
+		<string>Livvic-RegularItalic.ttf</string>
+		<string>Livvic-SemiBold.ttf</string>
+		<string>Livvic-SemiBoldItalic.ttf</string>
+		<string>Livvic-Thin.ttf</string>
+		<string>Livvic-ThinItalic.ttf</string>
 	</array>
 </dict>
 </plist>
