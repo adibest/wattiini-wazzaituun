@@ -16,10 +16,10 @@ import {
   Left, Right, Body, Title, Button, Card, CardItem
 } from 'native-base';
 import Icon from 'react-native-vector-icons/FontAwesome5';
-import Doa from '../datas/Doa.json';
+import Doa from '../datas/Doa2.json';
 import CustomMenuCopy from './CustomMenuCopy';
 
-export default class DoaUmum extends Component {
+export default class DoaNabi extends Component {
 
   id      = this.props.navigation.getParam('pageId');
   index   = this.id - 1;
@@ -81,7 +81,7 @@ export default class DoaUmum extends Component {
             </Button>
           </View>
           <View>
-            <Text style={styles.headerTitle}>DOA-DOA UMUM</Text>
+            <Text style={styles.headerTitle}>DOA PARA NABI</Text>
           </View>
           <View style={{paddingRight: 20}}>
             <CustomMenuCopy

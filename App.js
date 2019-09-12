@@ -6,11 +6,13 @@ import {
   createAppContainer
 } from 'react-navigation';
 
-import HomeScreen from './components/layouts-two/Home';
+import HomeScreen from './components/layouts-two/HomeFinal';
+import TabUmumScreen from './components/layouts-two/TabUmum';
 import DoaUmumScreen from './components/layouts-two/DoaUmum';
+import DoaNabiScreen from './components/layouts-two/DoaNabi';
 import UmumScreen from './components/layouts/Umum';
 import NabiScreen from './components/layouts/Nabi';
-import AboutScreen from './components/layouts/About';
+import AboutScreen from './components/layouts-two/About';
 
 const Stack = createStackNavigator({
   Home: {
@@ -18,6 +20,12 @@ const Stack = createStackNavigator({
   },
   DoaUmum: {
     screen: DoaUmumScreen
+  },
+  DoaNabi: {
+    screen: DoaNabiScreen
+  },
+  TabUmum: {
+    screen: TabUmumScreen
   },
   Umum: {
     screen: UmumScreen

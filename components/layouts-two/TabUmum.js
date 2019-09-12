@@ -16,10 +16,8 @@ import {
 import Doa from '../datas/Doa.json';
 
 export default class TabUmum extends Component {
-
-  constructor(props){
-    super(props);
-
+  doaBtnHandler(id){
+    this.props.navigation.navigate('DoaUmum', {id: id});
   }
 
   render() {
@@ -29,23 +27,30 @@ export default class TabUmum extends Component {
     return (
       <Container>
         <Content>
+          <Button
+            onPress={() => this.props.navigation.navigate('DoaUmum',{pageId:1})}
+          >
+            <Text>Test</Text>
+          </Button>
           <FlatList
             data={Doa}
             keyExtractor={(doa, index) => index.toString()}
             renderItem={(doa) => (
-              <TouchableOpacity
-                style={styles.touch}
-                onPress={() => this.props.navigation.navigate('DoaUmum',{pageId:doa.item.id})}
-              >
-                <View style={styles.container}>
-                  <View styles={styles.flexNumb}>
-                    <Text style={[styles.textRegular,styles.numbering]}>{doa.item.id}</Text>
+              <View>
+                <TouchableOpacity
+                  style={styles.touch}
+                  onPress={() => this.props.navigation.navigate('DoaUmum',{pageId:doa.item.id})}
+                >
+                  <View style={styles.container}>
+                    <View styles={styles.flexNumb}>
+                      <Text style={[styles.textRegular,styles.numbering]}>{doa.item.id}</Text>
+                    </View>
+                    <View style={styles.flexCont}>
+                      <Text style={[styles.textRegular,styles.titleList]}>{doa.item.title}</Text>
+                    </View>
                   </View>
-                  <View style={styles.flexCont}>
-                    <Text style={[styles.textRegular,styles.titleList]}>{doa.item.title}</Text>
-                  </View>
-                </View>
-              </TouchableOpacity>
+                </TouchableOpacity>
+              </View>
             )}
           />
         </Content>

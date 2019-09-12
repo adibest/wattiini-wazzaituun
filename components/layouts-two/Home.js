@@ -50,6 +50,11 @@ export default class Home extends Component {
             />
           </Right>
         </Header>
+        <Button
+          onPress={() => this.props.navigation.navigate('DoaUmum',{pageId:10})}
+        >
+          <Text>Test</Text>
+        </Button>
         <Tabs
           style={styles.tab}
           tabBarUnderlineStyle={styles.tabUnderlineColor}
