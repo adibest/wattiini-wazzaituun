@@ -19,9 +19,29 @@ import {
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
 export default class About extends Component {
+
+  constructor(props){
+    super(props);
+
+    this.state = {
+      width: Dimensions.get('window').width,
+    }
+
+    this.onLayout = this.onLayout.bind(this);
+  };
+
+  onLayout(e) {
+    this.setState({
+      width: Dimensions.get('window').width,
+    });
+  };
+
   render() {
     return (
-      <Container>
+      <Container
+        onLayout={this.onLayout}
+        style={{width: this.state.width}}
+      >
         <View style={styles.cusHead}>
           <View style={{paddingLeft: 20}}>
             <Button transparent onPress={() => this.props.navigation.goBack()}>
@@ -34,12 +54,19 @@ export default class About extends Component {
           <View style={{paddingRight: 40}}></View>
         </View>
         <Content>
-          <View style={styles.njobo}>
+          <View
+            style={{
+              width: this.state.width,
+              alignSelf: 'flex-start',
+              paddingVertical: 5,
+              paddingHorizontal: 10,
+            }}
+          >
             <Card>
               <View style={{alignItems: 'center',justifyContent: 'center',paddingTop: 20,paddingBottom: 10}}>
                 <Image source={require('./img/icon.png')} style={{height: 120, width: 120}} />
               </View>
-              <View style={{alignItems: 'center',justifyContent: 'center'}}>
+              <View style={{alignItems: 'center',justifyContent: 'center', marginBottom: 10}}>
                 <Text style={styles.lh}>Doa Dalam Qur'an</Text>
                 <Text style={styles.ln}>by Pondok Informatika Al-Madinah</Text>
               </View>
@@ -53,7 +80,7 @@ export default class About extends Component {
                   <Text style={[styles.lph,styles.tt]}>Dengan aplikasi ini, kami harap dapat menjadikan manfaat bagi para penggunanya. Tak ada gading yang tak retak. Aplikasi ini hanyalah buatan manusia. Maka dari pada itu kritik saran dari para pengguna akan sangat membantu dalam pengembangan aplikasi ini di kemudian hari. InsyaaAllaah.</Text>
                 </Body>
               </CardItem>
-              <CardItem>
+              <CardItem style={{height: 30}}>
                 <Text style={styles.lh}>Developer</Text>
               </CardItem>
               <CardItem>
@@ -61,11 +88,11 @@ export default class About extends Component {
                   <Text style={[styles.lph,styles.tt]}><Icon name='angle-right' />  Adib</Text>
                 </Body>
               </CardItem>
-              <CardItem>
+              <CardItem style={{height: 30}}>
                 <Text style={styles.lh}>Pondok Informatika Al Madinah</Text>
               </CardItem>
               <CardItem>
-                <Body>
+                <Body style={{alignItems: 'flex-start', justifyContent: 'flex-start'}}>
                   <Text style={[styles.lph,styles.tt]}><Icon name='envelope' />  pondokitalmadinah@gmail.com</Text>
                   <Text onPress={ () => Linking.openURL('https://pondokinformatika.com')} style={[styles.lph,styles.tt]}><Icon name='external-link-alt' />  https://pondokinformatika.com</Text>
                   <Text style={[styles.lph,styles.tt]}><Icon name='mobile-alt' />  0857 2524 9265 (Irhamullah)</Text>
@@ -90,7 +117,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     backgroundColor: '#22223B',
     height: 70,
-    width: Dimensions.get('window').width,
   },
   njobo: {
     width: Dimensions.get('window').width,

@@ -28,16 +28,30 @@ export default class HomeFinal extends Component {
     SplashScreen.hide();
   };
 
+  constructor(props){
+    super(props);
+
+    this.state = {
+      width: Dimensions.get('window').width,
+    }
+
+    this.onLayout = this.onLayout.bind(this);
+  };
+
+  onLayout(e) {
+    this.setState({
+      width: Dimensions.get('window').width,
+    });
+  };
+
   render() {
     const {navigation} = this.props;
     return (
-      <Container>
+      <Container
+        onLayout={this.onLayout}
+        style={{width: this.state.width}}
+      >
         <View hasTabs style={styles.cusHead}>
-          <View style={styles.leftHead}>
-            <View style={styles.cusLeft}>
-              <Image source={require('./img/icon.png')} style={{height: 30, width: 30}} />
-            </View>
-          </View>
           <View style={styles.textHead}>
             <Text style={styles.headerTitle}>Doa Dalam Qur'an</Text>
             <Text style={styles.headerDesc}>Sebuah aplikasi yang berisi doa-doa dalam Al-Qur'an Al-Karim</Text>
@@ -75,29 +89,44 @@ export default class HomeFinal extends Component {
             </TabHeading>
           }
           >
-            <View style={styles.outer}>
-              <FlatList
-                data={Doa}
-                keyExtractor={(doa, index) => index.toString()}
-                renderItem={(doa) => (
-                  <View>
-                    <TouchableOpacity
-                      style={styles.touch}
-                      onPress={() => this.props.navigation.navigate('DoaUmum',{pageId:doa.item.id})}
+            <FlatList
+              style={{width: this.state.width}}
+              data={Doa}
+              keyExtractor={(doa, index) => index.toString()}
+              renderItem={(doa) => (
+                <View style={styles.outer}>
+                  <TouchableOpacity
+                    style={styles.touch}
+                    onPress={() => this.props.navigation.navigate('DoaUmum',{pageId:doa.item.id})}
+                  >
+                    <View
+                      style={{
+                        flexDirection: 'row',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        paddingHorizontal: 10,
+                        width: this.state.width-20,
+                        height: 50,
+                        borderWidth: 1,
+                        borderColor: '#22223B',
+                        borderRadius: 5,
+                      }}
                     >
-                      <View style={styles.container}>
-                        <View styles={styles.flexNumb}>
-                          <Text style={[styles.textRegular,styles.numbering]}>{doa.item.id}</Text>
-                        </View>
-                        <View style={styles.flexCont}>
-                          <Text style={[styles.textRegular,styles.titleList]}>{doa.item.title}</Text>
-                        </View>
+                      <View styles={styles.flexNumb}>
+                        <Text style={[styles.textRegular,styles.numbering]}>{doa.item.id}</Text>
                       </View>
-                    </TouchableOpacity>
-                  </View>
-                )}
-              />
-            </View>
+                      <View style={styles.flexCont}>
+                        <Text style={[styles.textRegular,styles.titleList]}>{doa.item.title}</Text>
+                      </View>
+                      <View style={styles.flexIcon}>
+                        <Icon name='angle-right' size={12} style={{color: '#22223B'}} />
+                      </View>
+                    </View>
+                  </TouchableOpacity>
+                </View>
+              )}
+            />
+            <View style={{height: 10}}></View>
           </Tab>
           <Tab heading={
             <TabHeading style={styles.tabHeading}>
@@ -105,29 +134,44 @@ export default class HomeFinal extends Component {
             </TabHeading>
           }
           >
-            <View style={styles.outer}>
-              <FlatList
-                data={Doa2}
-                keyExtractor={(doa, index) => index.toString()}
-                renderItem={(doa) => (
-                  <View>
-                    <TouchableOpacity
-                      style={styles.touch}
-                      onPress={() => this.props.navigation.navigate('DoaNabi',{pageId:doa.item.id})}
+            <FlatList
+              style={{width: this.state.width}}
+              data={Doa2}
+              keyExtractor={(doa, index) => index.toString()}
+              renderItem={(doa) => (
+                <View style={(styles.outer)}>
+                  <TouchableOpacity
+                    style={styles.touch}
+                    onPress={() => this.props.navigation.navigate('DoaNabi',{pageId:doa.item.id})}
+                  >
+                    <View
+                      style={{
+                        flexDirection: 'row',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        paddingHorizontal: 10,
+                        width: this.state.width-20,
+                        height: 50,
+                        borderWidth: 1,
+                        borderColor: '#22223B',
+                        borderRadius: 5,
+                      }}
                     >
-                      <View style={styles.container}>
-                        <View styles={styles.flexNumb}>
-                          <Text style={styles.numbering}>{doa.item.id}</Text>
-                        </View>
-                        <View style={styles.flexCont}>
-                          <Text style={[styles.textRegular,styles.titleList]}>{doa.item.title}</Text>
-                        </View>
+                      <View styles={styles.flexNumb}>
+                        <Text style={styles.numbering}>{doa.item.id}</Text>
                       </View>
-                    </TouchableOpacity>
-                  </View>
-                )}
-              />
-            </View>
+                      <View style={styles.flexCont}>
+                        <Text style={[styles.textRegular,styles.titleList]}>{doa.item.title}</Text>
+                      </View>
+                      <View style={styles.flexIcon}>
+                        <Icon name='angle-right' size={12} style={{color: '#22223B'}} />
+                      </View>
+                    </View>
+                  </TouchableOpacity>
+                </View>
+              )}
+            />
+            <View style={{height: 20}}></View>
           </Tab>
         </Tabs>
       </Container>
@@ -142,47 +186,23 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: '#22223B',
     height: 120,
-    width: Dimensions.get('window').width,
-  },
-  cusLeft: {
-    backgroundColor: '#02C39A',
-    height: 120,
-    borderTopRightRadius: 60,
-    borderBottomRightRadius: 60,
-    alignItems: 'flex-start',
-    justifyContent: 'center',
-    paddingLeft: 15
-  },
-  leftHead: {
-    flex: 1,
   },
   textHead: {
     flex: 4,
-  },
-  headerArab: {
-    fontFamily: 'me_quran',
-    textAlign: 'center',
-    color: '#fff',
-    fontSize: 24,
+    paddingLeft: 20
   },
   rightHead: {
     flex: 1,
     alignItems: 'flex-end',
   },
-  header: {
-    backgroundColor: '#22223B',
-    height: 95,
-  },
   headerTitle: {
     color: '#fff',
     fontFamily: 'Livvic-SemiBold',
-    textAlign: 'center',
     fontSize: 24,
   },
   headerDesc: {
     color: '#fff',
     fontFamily: 'Livvic-Light',
-    textAlign: 'center',
     fontSize: 12,
   },
   tab: {
@@ -202,30 +222,34 @@ const styles = StyleSheet.create({
     height: 2.15,
   },
   outer: {
-    paddingVertical: 10,
-    paddingHorizontal: 10,
-    backgroundColor: '#fafafa',
+    marginTop: 10,
+    backgroundColor: '#ffffff',
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   container: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
+    paddingHorizontal: 10,
     width: Dimensions.get('window').width-20,
     height: 50,
-    paddingHorizontal: 10,
-    marginVertical: 5,
     borderWidth: 1,
     borderColor: '#22223B',
-    borderRadius: 10,
+    borderRadius: 5,
   },
   textRegular: {
     fontFamily: 'Livvic-Regular',
   },
   flexNumb: {
-    flex: 1,
+    flex: 2,
   },
   flexCont: {
     flex: 9,
+  },
+  flexIcon: {
+    alignItems: 'flex-end',
+    flex: 1,
   },
   numbering: {
     padding: 2,
@@ -240,6 +264,6 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   titleList: {
-    fontSize: 14,
+    fontSize: 12,
   },
 });

@@ -67,13 +67,32 @@ export default class DoaUmum extends Component {
     );
   };
 
+  constructor(props){
+    super(props);
+
+    this.state = {
+      width: Dimensions.get('window').width,
+    }
+
+    this.onLayout = this.onLayout.bind(this);
+  };
+
+  onLayout(e) {
+    this.setState({
+      width: Dimensions.get('window').width,
+    });
+  };
+
   render() {
 
     const {navigation} = this.props;
     const index        = parseInt(this.id) - 1;
 
     return (
-      <Container>
+      <Container
+        onLayout={this.onLayout}
+        style={{width: this.state.width}}
+      >
         <View style={styles.cusHead}>
           <View style={{paddingLeft: 20}}>
             <Button transparent onPress={() => this.props.navigation.goBack()}>
@@ -120,7 +139,14 @@ export default class DoaUmum extends Component {
             pagingEnabled={true}
             showsHorizontalScrollIndicator={false}
             renderItem={(doa) => (
-              <View style={styles.njobo}>
+              <View
+                style={{
+                  width: this.state.width,
+                  alignSelf: 'flex-start',
+                  paddingVertical: 5,
+                  paddingHorizontal: 10,
+                }}
+              >
                 <Card>
                   <CardItem header style={{alignItems: 'center', justifyContent: 'center'}}>
                     <Text style={[styles.title,styles.tt]}>{doa.item.title}</Text>
@@ -151,7 +177,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     backgroundColor: '#22223B',
     height: 70,
-    width: Dimensions.get('window').width,
   },
   headerTitle: {
     color: '#fff',
