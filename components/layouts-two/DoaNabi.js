@@ -39,33 +39,6 @@ export default class DoaNabi extends Component {
       'Doa berhasil disalin!'
     );
   };
-  copyArab = async (foo) => {
-    const data    = Doa[parseInt(foo) - 1];
-    const textArab = data.arabic;
-    await Clipboard.setString(textArab);
-    Alert.alert(
-      'Salin Ayat',
-      'Ayat berhasil disalin!'
-    );
-  };
-  copyIsi = async (foo) => {
-    const data    = Doa[parseInt(foo) - 1];
-    const textIsi = data.translate;
-    await Clipboard.setString(textIsi);
-    Alert.alert(
-      'Salin Terjemahan',
-      'Terjemahan berhasil disalin!'
-    );
-  };
-  copySrc = async (foo) => {
-    const data    = Doa[parseInt(foo) - 1];
-    const textSrc = data.source;
-    await Clipboard.setString(textSrc);
-    Alert.alert(
-      'Salin Dalil',
-      'Dalil berhasil disalin!'
-    );
-  };
 
   constructor(props){
     super(props);
@@ -114,15 +87,6 @@ export default class DoaNabi extends Component {
               }}
               copyDoa={() => {
                 this.copyDoa(this.id);
-              }}
-              copyArab={() => {
-                this.copyArab(this.id);
-              }}
-              copyIsi={() => {
-                this.copyIsi(this.id);
-              }}
-              copySrc={() => {
-                this.copySrc(this.id);
               }}
             />
           </View>

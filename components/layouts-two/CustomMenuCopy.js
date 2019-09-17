@@ -22,18 +22,6 @@ export default class CustomMenuCopy extends Component {
     this._menu.hide();
     this.props.copyDoa();
   };
-  copyArab = () => {
-    this._menu.hide();
-    this.props.copyArab();
-  };
-  copyIsi = () => {
-    this._menu.hide();
-    this.props.copyIsi();
-  };
-  copySrc = () => {
-    this._menu.hide();
-    this.props.copySrc();
-  };
 
   render() {
     return (
@@ -47,9 +35,6 @@ export default class CustomMenuCopy extends Component {
           }
         >
           <MenuItem onPress={this.copyDoa} style={styles.menu}><Text style={styles.font}>Salin Doa</Text></MenuItem>
-          <MenuItem onPress={this.copyArab} style={styles.menu}><Text style={styles.font}>Salin Ayat</Text></MenuItem>
-          <MenuItem onPress={this.copyIsi} style={styles.menu}><Text style={styles.font}>Salin Terjemahan</Text></MenuItem>
-          <MenuItem onPress={this.copySrc} style={styles.menu}><Text style={styles.font}>Salin Dalil</Text></MenuItem>
         </Menu>
       </View>
     );
