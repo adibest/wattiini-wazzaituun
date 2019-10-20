@@ -1,22 +1,22 @@
 import React, {Component} from 'react';
-import {createStackNavigator, createAppContainer} from 'react-navigation';
+import {
+  createStackNavigator,
+  createDrawerNavigator,
+  createSwitchNavigator,
+  createAppContainer
+} from 'react-navigation';
 
-import HomeScreen from './Home';
-import AboutScreen from './components/About';
-import SidebarScreen from './components/Sidebar';
-import DoaUmumScreen from './components/DoaUmum';
-import DoaNabiScreen from './components/DoaNabi';
-import CardScreen from './components/Card';
+import HomeScreen from './components/layouts-two/HomeFinal';
+import TabUmumScreen from './components/layouts-two/TabUmum';
+import DoaUmumScreen from './components/layouts-two/DoaUmum';
+import DoaNabiScreen from './components/layouts-two/DoaNabi';
+import UmumScreen from './components/layouts/Umum';
+import NabiScreen from './components/layouts/Nabi';
+import AboutScreen from './components/layouts-two/About';
 
-const screen = createStackNavigator({
+const Stack = createStackNavigator({
   Home: {
     screen: HomeScreen
-  },
-  Sidebar: {
-    screen: SidebarScreen
-  },
-  About: {
-    screen: AboutScreen
   },
   DoaUmum: {
     screen: DoaUmumScreen
@@ -24,16 +24,25 @@ const screen = createStackNavigator({
   DoaNabi: {
     screen: DoaNabiScreen
   },
-  Card: {
-    screen: CardScreen
+  TabUmum: {
+    screen: TabUmumScreen
+  },
+  Umum: {
+    screen: UmumScreen
+  },
+  Nabi: {
+    screen: NabiScreen
+  },
+  About: {
+    screen: AboutScreen
   },
 }, {
   defaultNavigationOptions: {
     header: null,
-  }
+  },
 });
 
-const AppContainer = createAppContainer(screen);
+const AppContainer = createAppContainer(Stack);
 
 export default class App extends Component {
   render(){

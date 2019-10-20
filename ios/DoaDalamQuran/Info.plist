@@ -55,6 +55,27 @@
 	<false/>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Roboto_medium.ttf</string>
+		<string>Roboto.ttf</string>
+		<string>rubicon-icon-font.ttf</string>
+		<string>Livvic-Regular.ttf</string>
+		<string>MarkaziText-Regular.ttf</string>
+		<string>me_quran.ttf</string>
+		<string>Livvic-Bold.ttf</string>
+		<string>Livvic-Black.ttf</string>
+		<string>Livvic-BlackItalic.ttf</string>
+		<string>Livvic-BoldItalic.ttf</string>
+		<string>Livvic-ExtraLight.ttf</string>
+		<string>Livvic-ExtraLightItalic.ttf</string>
+		<string>Livvic-Light.ttf</string>
+		<string>Livvic-LightItalic.ttf</string>
+		<string>Livvic-Medium.ttf</string>
+		<string>Livvic-MediumItalic.ttf</string>
+		<string>Livvic-RegularItalic.ttf</string>
+		<string>Livvic-SemiBold.ttf</string>
+		<string>Livvic-SemiBoldItalic.ttf</string>
+		<string>Livvic-Thin.ttf</string>
+		<string>Livvic-ThinItalic.ttf</string>
 		<string>AntDesign.ttf</string>
 		<string>Entypo.ttf</string>
 		<string>EvilIcons.ttf</string>
@@ -68,9 +89,6 @@
 		<string>MaterialCommunityIcons.ttf</string>
 		<string>MaterialIcons.ttf</string>
 		<string>Octicons.ttf</string>
-		<string>Roboto_medium.ttf</string>
-		<string>Roboto.ttf</string>
-		<string>rubicon-icon-font.ttf</string>
 		<string>SimpleLineIcons.ttf</string>
 		<string>Zocial.ttf</string>
 		<string>Fontisto.ttf</string>
