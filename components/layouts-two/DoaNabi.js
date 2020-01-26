@@ -27,7 +27,7 @@ export default class DoaNabi extends Component {
   textArab = this.data.arabic;
   textIsi = this.data.translate;
   textSrc = this.data.source;
-  textCp  = 'Download aplikasinya kalau sudah di upload di playstore :-)';
+  textCp  = 'https://play.google.com/store/apps/details?id=com.doadalamquran';
   textLengkapDoa = this.data.title + '\n \n' + this.data.arabic + '\n \n' + this.data.translate + '\n \n' + this.data.source;
 
   copyDoa = async (foo) => {
